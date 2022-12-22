@@ -16,7 +16,7 @@ namespace EmailQTF
     public class Function1
     {
         [FunctionName("Function1")]
-        public void Run([TimerTrigger("0 * * * * *")]TimerInfo myTimer, ILogger log)
+        public void Run([TimerTrigger("%TriggerTime%")]TimerInfo myTimer, ILogger log)
         {
             log.LogInformation("Timer execution at " + DateTime.Now.ToString());
             List<Classes.EmailQueue> emails = GetSendableEmail(log);    //  Is there anything to be sent?
